@@ -5,7 +5,8 @@ import { CommonActions } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text, BottomNavigation } from 'react-native-paper';
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Icon} from "react-native-paper"
+import Icon from 'react-native-vector-icons/FontAwesome';
+import IonIcons from 'react-native-vector-icons/Ionicons';
 // import Icon from 'react-native-ionicons'
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -22,6 +23,7 @@ import MakeAPost from './MakeAPost';
 const Tab = createBottomTabNavigator();
 
 export default function MainContainer() {
+
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -35,6 +37,7 @@ export default function MainContainer() {
         borderStyle:"solid",
         borderTopWidth:1,
         borderBlockColor:"black",
+        marginBottom:10,
         height:60,
         }}
           navigationState={state}
@@ -83,7 +86,7 @@ export default function MainContainer() {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => {
-            return <Icon source="home" size={size} color={color}  />;
+            return <IonIcons  name="home-outline" size={25} color="#000" />;
           },
         }}
       />
@@ -91,9 +94,10 @@ export default function MainContainer() {
         name="make a post"
         component={MakeAPost}
         options={{
-          tabBarLabel: 'post',
+          tabBarLabel: 'Post',
           tabBarIcon: ({ color, size }) => {
-            return <Icon source="home" size={size} color={color}  />;
+            return <IonIcons  name="add" size={25} color="#000"  /> ;
+          
           },
         }}
       />
@@ -103,7 +107,7 @@ export default function MainContainer() {
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => {
-            return <Icon source="cog" size={size} color={color} />;
+            return <IonIcons  name="person-outline" size={25} color="#000" />;
           },
         }}
       />
